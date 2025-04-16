@@ -14,17 +14,35 @@ body {
   color: #333;
   width: 100%;
   padding: 20px;
-  text-align: center;
-  font-size: 2rem;
   display: flex;               /* Use flex for alignment */
   align-items: center;         /* Vertically center the items */
-  justify-content: center;     /* Center the items horizontally */
 }
+
 /* Logo Styles */
-.header .logo {
-  height: 50px;               /* Adjust the height as necessary */
-  margin-right: 10px;         /* Space between the logo and the text */
+.logo {
+  height: 250px;               /* Adjust the height as necessary */
+  margin-right: 15px;         /* Space between the logo and the text */
+  margin-left: 15px;         /* Space between the logo and the text */
  } 
+/* Container for header text to stack it vertically */
+.header-text {
+  display: flex;
+  flex-direction: column; /* Stack title and subtext */
+  justify-content: center;
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 700;       /* Bold font */
+}
+
+.header-subtext {
+  font-size: 1rem;
+  font-weight: 400;       /* Regular font weight */
+  margin-top: 5px;        /* Gap between title and subtext */
+}
+
+
 /* Container for cards */
 .container {
   display: flex;
