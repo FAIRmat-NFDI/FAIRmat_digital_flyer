@@ -1,0 +1,78 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Header */
+.header {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+/* Container for cards */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px;
+  gap: 20px;
+}
+/* Card Styles */
+.card {
+  width: 250px;
+  height: 150px;
+  perspective: 1000px; /* Needed for the 3D effect */
+  cursor: pointer;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+/* Flip on click: toggled by JavaScript */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+/* Front side remains visible until flipped */
+.card-front {
+  font-weight: bold;
+}
+/* Back side: rotated so it shows after flipping */
+.card-back {
+  background-color: #e9e9e9;
+  transform: rotateY(180deg);
+  font-size: 0.9rem;
+  text-align: center;
+}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
