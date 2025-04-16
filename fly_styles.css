@@ -8,15 +8,22 @@ body {
   flex-direction: column;
   align-items: center;
 }
-/* Header */
+/* Header Styles*/
 .header {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffff;
+  color: #333;
   width: 100%;
   padding: 20px;
   text-align: center;
   font-size: 2rem;
+  display: flex;               /* Use flex for alignment */
+  align-items: center;         /* Vertically center the items */
+  justify-content: center;     /* Center the items horizontally */
 }
+/* Logo Styles */
+.header .logo {
+  height: 50px;               /* Adjust the height as necessary */
+  margin-right: 10px;         /* Space between the logo and the text */
 /* Container for cards */
 .container {
   display: flex;
