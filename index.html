@@ -13,65 +13,155 @@
     <img src="assets/FAIRmat_new.webp" alt="FAIRmat Logo" class="logo">
     <div class="header-text">
       <div class="header-title">FAIRmat</div>
-      <div class="header-subtext">builds a FAIR data infrastructure for condensed-matter physics and the chemical physics of solids</div>
+      <div class="header-subtext">
+        builds a FAIR data infrastructure for condensed-matter physics and the chemical physics of solids
+      </div>
     </div>
   </div>
 
-  <!-- Container for the Cards -->
+  <!-- Container for the Cards (Grid) -->
   <div class="container">
     <!-- Card 1: The FAIRmat consortium -->
-    <div class="card" onclick="flipCard(this)">
+    <div class="card" onclick="openOverlay(0)">
       <div class="card-inner">
         <div class="card-side card-front">
           The FAIRmat consortium
         </div>
         <div class="card-side card-back">
-          Learn more about the FAIRmat consortium, our members, and our mission.
+          Learn more about the FAIRmat consortium.
         </div>
       </div>
     </div>
 
-    <!-- Card 2: Our services -->
-    <div class="card" onclick="flipCard(this)">
+    <!-- Card 2: RDM solutions (example with slider content) -->
+    <div class="card" onclick="openOverlay(1)">
       <div class="card-inner">
         <div class="card-side card-front">
-          Our services
+          RDM solutions
         </div>
         <div class="card-side card-back">
-          Explore the range of services we offer to support your research and innovation.
+          Explore our RDM solutions.
         </div>
       </div>
     </div>
 
     <!-- Card 3: Learning resources -->
-    <div class="card" onclick="flipCard(this)">
+    <div class="card" onclick="openOverlay(2)">
       <div class="card-inner">
         <div class="card-side card-front">
           Learning resources
         </div>
         <div class="card-side card-back">
-          Find tutorials, documentation, and webinars to advance your knowledge.
+          Access tutorials and webinars.
         </div>
       </div>
     </div>
 
-    <!-- Card 4: Get in touch -->
-    <div class="card" onclick="flipCard(this)">
+    <!-- Card 4: Get in touch (example with slider content) -->
+    <div class="card" onclick="openOverlay(3)">
       <div class="card-inner">
         <div class="card-side card-front">
           Get in touch
         </div>
         <div class="card-side card-back">
-          Contact us for more information, support, or collaboration opportunities.
+          Contact information and more.
         </div>
       </div>
     </div>
   </div>
 
-  <!-- JavaScript to toggle the flip effect -->
+  <!-- Overlay for Expanded Card Content (covers the window under header) -->
+  <div id="cardOverlay" class="card-overlay">
+    <div class="overlay-card">
+      <span class="close-btn" onclick="closeOverlay()">×</span>
+      <!-- Slider Arrows (shown conditionally) -->
+      <span id="prevBtn" class="nav-btn prev-btn" onclick="prevSlide()">&#10094;</span>
+      <span id="nextBtn" class="nav-btn next-btn" onclick="nextSlide()">&#10095;</span>
+      <div class="overlay-content" id="overlayContent">
+        <!-- Expanded content gets injected here -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript: Overlay and Slider Functionality -->
   <script>
-    function flipCard(cardElement) {
-      cardElement.classList.toggle('flipped');
+    // Define overlay content for each card.
+    // slider: true means show navigation arrows, false if one slide only.
+    var overlayData = [
+      {
+        slider: false,
+        slides: [
+        '<img src="assets/fairmat_1.png" alt="RDM Slide 1">'
+        ]
+      },
+      {
+        slider: true,
+        slides: [
+          '<img src="assets/service_1.png" alt="RDM Slide 1">',
+          '<img src="assets/service_2.png" alt="NOMAD"><p><a href="https://nomad-lab.eu/nomad-lab/nomad.html" target="_blank">More information</a></p>',
+          '<img src="assets/service_3.png" alt="NOMAD Oasis"><p><a href="https://nomad-lab.eu/nomad-lab/nomad-oasis.html" target="_blank">More information</a></p>',
+          '<img src="assets/service_4.png" alt="NOMAD CAMELS"><p><a href="https://nomad-lab.eu/nomad-lab/nomad-camels.html" target="_blank">More information</a></p>'
+        ]
+      },
+      {
+        slider: true,
+        slides: [
+          '<h2>Learning resources</h2><p>Tutorials, documentation, and webinars to advance your knowledge.</p>',
+          '<h2>The FAIRmat tutorials</h2><p>The FAIRmat tutorials</p>',
+          '<h2>NOMAD Documentation</h2><p>NOMAD Documentation</p>',
+          '<h2>Upcoming events</h2><p>Upcoming events</p>'
+        ]
+      },
+      {
+        slider: true,
+        slides: [
+          '<h2>Get in touch</h2><p>For real-time interaction and quick responses, we invite you to join our community on Discord, where you can connect directly with our team members</p><p>Whether you need tips on RDM best practices or help using our tools such as NOMAD, NOMAD Oasis, and NOMAD CAMELS, NOMAD Discord is the best place to get answers.</p><img src="assets/discord.png" alt="Get in touch 1">',
+          '<h2>Follow us on social media for updates and news.</h2><img src="assets/social.png" alt="Get in touch 2">',
+          '<h2>Contribute to the project</h2><p>github and gitlab</p>'
+        ]
+      }
+    ];
+
+    // Global variables to keep track of the current card and slide index
+    var currentCardIndex = 0;
+    var currentSlideIndex = 0;
+
+    function openOverlay(cardIndex) {
+      currentCardIndex = cardIndex;
+      currentSlideIndex = 0; // Start with the first slide
+      updateOverlayContent();
+      // Show the overlay (covering window beneath the header)
+      document.getElementById('cardOverlay').style.display = "flex";
+    }
+
+    function updateOverlayContent() {
+      var data = overlayData[currentCardIndex];
+      var content = data.slides[currentSlideIndex];
+      document.getElementById('overlayContent').innerHTML = content;
+      // Show or hide navigation arrows based on slider property and number of slides
+      if (data.slider && data.slides.length > 1) {
+        document.getElementById('prevBtn').style.display = "block";
+        document.getElementById('nextBtn').style.display = "block";
+      } else {
+        document.getElementById('prevBtn').style.display = "none";
+        document.getElementById('nextBtn').style.display = "none";
+      }
+    }
+
+    function closeOverlay() {
+      document.getElementById('cardOverlay').style.display = "none";
+    }
+
+    function nextSlide() {
+      var data = overlayData[currentCardIndex];
+      currentSlideIndex = (currentSlideIndex + 1) % data.slides.length;
+      updateOverlayContent();
+    }
+
+    function prevSlide() {
+      var data = overlayData[currentCardIndex];
+      currentSlideIndex = (currentSlideIndex - 1 + data.slides.length) % data.slides.length;
+      updateOverlayContent();
     }
   </script>
 </body>
