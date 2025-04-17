@@ -5,21 +5,28 @@ body {
   background-color: #f0f0f0;
   color: #333;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+
 }
 
 /* Header */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100px;
   background-color: #f0f0f0;
   width: 100%;
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
 }
 .logo {
-  height: 50px;
-  margin-right: 10px;
+  height: 60px;
+  margin-right: 15px;
 }
 .header-text {
   display: flex;
@@ -31,8 +38,9 @@ body {
   font-weight: 700;
 }
 .header-subtext {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
+  margin-top: 0px;
 }
 
 /* Container Grid for Cards */
@@ -41,7 +49,8 @@ body {
   grid-template-columns: repeat(2, 300px);
   column-gap: 20px;
   row-gap: 20px;
-  margin: 30px;
+  margin: 140px auto 30px;
+  max-width: 640px
   justify-content: center;
 }
 
@@ -76,7 +85,7 @@ body {
   box-sizing: border-box;
 }
 .card-front {
-  font-weight: bold;
+  font-weight: 700;
 }
 .card-back {
   background-color: #e9e9e9;
@@ -88,13 +97,12 @@ body {
 /* Overlay Styles */
 .card-overlay {
   position: fixed;
-  top: 0;
+  top: 100px;               /* below the fixed header */
   left: 0;
   width: 100%;
-  height: 100%;
-  /* If you want the overlay under the header, adjust 'top' accordingly */
+  height: calc(100% - 100px);
   background-color: rgba(0, 0, 0, 0.5);
-  display: none; /* hidden by default */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -104,6 +112,7 @@ body {
   padding: 20px;
   width: 90%;
   max-width: 800px;
+  max-height: 90%;
   position: relative;
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -140,7 +149,7 @@ body {
 
 /* Overlay Content */
 .overlay-content {
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 .overlay-content img {

@@ -1,0 +1,49 @@
+/* MOBILE (max-width: 600px) — single‑column stack, centered under header */
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Push down below the header (header min-height + padding) */
+    margin: 140px 0 20px;
+    padding: 10px 10px;
+    width: 100%;
+    max-width: none;
+  }
+  .card {
+    width: 100%;
+    max-width: 400px;   /* or whatever max you prefer */
+    height: 70px;
+  }
+  /* Full‑screen overlay under (and including) the header */
+  .card-overlay {
+    top: 0;
+    height: 100%;
+  }
+  .overlay-card {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  /* Images still scale */
+  .overlay-content img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Smaller nav & close buttons for thumbs */
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 4px 8px;
+  }
+  .close-btn {
+    font-size: 1.3rem;
+    top: 8px;
+    right: 8px;
+  }
+}
