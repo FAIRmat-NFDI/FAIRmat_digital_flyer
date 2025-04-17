@@ -18,39 +18,42 @@ body {
   background-color: #f0f0f0;
   width: 100%;
   padding: 0 20px;
-  display: flex;
-  align-items: center;
   box-sizing: border-box;
   border-bottom: 1px solid #ccc;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+
 }
 .logo {
   height: 60px;
-  margin-right: 15px;
+  margin: 15px;
 }
-.header-text {
+.header-main {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-bottom: 0px;
 }
 .header-title {
-  font-size: 2rem;
+  font-size: 2.7rem;
   font-weight: 700;
+  margin-top: 15px;
 }
 .header-subtext {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  margin-top: 0px;
+  line-height: 1;
+  margin-left: 15px;
+  margin-bottom:10px;
 }
 
 /* Container Grid for Cards */
 .container {
   display: grid;
   grid-template-columns: repeat(2, 300px);
-  column-gap: 20px;
-  row-gap: 20px;
+  column-gap: 10px;
+  row-gap: 10px;
   margin: 140px auto 30px;
-  max-width: 640px
+  max-width: 640px;
   justify-content: center;
 }
 

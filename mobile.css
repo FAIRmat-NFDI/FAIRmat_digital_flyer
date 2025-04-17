@@ -6,8 +6,8 @@
     align-items: center;
     gap: 10px;
     /* Push down below the header (header min-height + padding) */
-    margin: 140px 0 20px;
-    padding: 10px 10px;
+    margin: 170px 0 30px;
+    padding: 20px;
     width: 100%;
     max-width: none;
   }
@@ -18,8 +18,8 @@
   }
   /* Full‑screen overlay under (and including) the header */
   .card-overlay {
-    top: 0;
-    height: 100%;
+    top: 180px;
+    height: 600px;
   }
   .overlay-card {
     width: 100%;
@@ -30,6 +30,7 @@
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
+
   }
   /* Images still scale */
   .overlay-content img {

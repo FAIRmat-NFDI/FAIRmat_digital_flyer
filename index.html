@@ -11,12 +11,12 @@
 <body>
   <!-- Header Section -->
   <div class="header">
+    <div class="header-main">
     <img src="assets/FAIRmat_new.webp" alt="FAIRmat Logo" class="logo">
-    <div class="header-text">
-      <div class="header-title">FAIRmat</div>
-      <div class="header-subtext">
-        builds a FAIR data infrastructure for condensed-matter physics and the chemical physics of solids
-      </div>
+    <div class="header-title">FAIRmat</div>
+    </div>
+    <div class="header-subtext">
+      FAIR data infrastructure for condensed-matter physics and the chemical physics of solids
     </div>
   </div>
 
@@ -28,20 +28,14 @@
         <div class="card-side card-front">
           The FAIRmat consortium
         </div>
-        <div class="card-side card-back">
-          Learn more about the FAIRmat consortium.
-        </div>
       </div>
     </div>
 
-    <!-- Card 2: RDM solutions (example with slider content) -->
+    <!-- Card 2: The NOMAD ecosysystem -->
     <div class="card" onclick="openOverlay(1)">
       <div class="card-inner">
         <div class="card-side card-front">
           The NOMAD ecosystem
-        </div>
-        <div class="card-side card-back">
-          Explore our RDM solutions.
         </div>
       </div>
     </div>
@@ -52,13 +46,10 @@
         <div class="card-side card-front">
           Learning resources
         </div>
-        <div class="card-side card-back">
-          Access tutorials and webinars.
-        </div>
       </div>
     </div>
 
-    <!-- Card 4: Get in touch (example with slider content) -->
+    <!-- Card 4: Get in touch -->
     <div class="card" onclick="openOverlay(3)">
       <div class="card-inner">
         <div class="card-side card-front">
@@ -92,6 +83,7 @@
       {
         slider: false,
         slides: [
+        '<ul><li>Show similar information from the roll-up banner</li><li>At the botthom NFDI logo + DFG logo and the following text "FAIRmat is a consortium of the NFDI (Germany`s National Research Data Infrastructure) and is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – project 460197019.</li><li</ul>',
         '<img src="assets/fairmat_1.png" alt="RDM Slide 1">'
         ]
       },
