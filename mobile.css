@@ -6,7 +6,7 @@
     align-items: center;
     gap: 10px;
     /* Push down below the header (header min-height + padding) */
-    margin: 170px 0 30px;
+    margin: 20px auto 30px;
     padding: 20px;
     width: 100%;
     max-width: none;
@@ -18,7 +18,7 @@
   }
   /* Full‑screen overlay under (and including) the header */
   .card-overlay {
-    top: 180px;
+    top: 200px;
     height: 600px;
   }
   .overlay-card {
@@ -27,7 +27,7 @@
     max-width: none;
     max-height: none;
     border-radius: 0;
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
     overflow-y: auto;
 

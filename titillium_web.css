@@ -3,17 +3,17 @@
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 300;
-  src: url('/assets/font/TitilliumWeb-Light.ttf') format('truetype');
+  src: url('assets/font/TitilliumWeb-Light.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/font/TitilliumWeb-Regular.ttf') format('truetype');
+  src: url('assets/font/TitilliumWeb-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 700;
-  src: url('/assets/font/TitilliumWeb-Bold.ttf') format('truetype');
+  src: url('assets/font/TitilliumWeb-Bold.ttf') format('truetype');
 }

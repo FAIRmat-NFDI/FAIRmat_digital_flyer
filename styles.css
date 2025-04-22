@@ -1,6 +1,7 @@
 /* Global Styles */
 body {
   margin: 0;
+  padding-top: 170px;
   font-family: 'Titillium Web', sans-serif;
   background-color: #f0f0f0;
   color: #333;
@@ -52,14 +53,15 @@ body {
   grid-template-columns: repeat(2, 300px);
   column-gap: 10px;
   row-gap: 10px;
-  margin: 140px auto 30px;
+  margin: 0px auto 30px;
   max-width: 640px;
   justify-content: center;
 }
 
 /* Card Styles */
 .card {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 150px;
   perspective: 1000px;
   cursor: pointer;
@@ -69,6 +71,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
 }
+
 .card-inner {
   position: relative;
   width: 100%;
@@ -100,10 +103,11 @@ body {
 /* Overlay Styles */
 .card-overlay {
   position: fixed;
-  top: 100px;               /* below the fixed header */
+  top: 150px;               /* below the fixed header */
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: calc(100% - 100px);
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   justify-content: center;
@@ -112,20 +116,22 @@ body {
 }
 .overlay-card {
   background-color: #fff;
-  padding: 20px;
-  width: 90%;
-  max-width: 800px;
-  max-height: 90%;
+  padding: 0px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 100%;
+  overflow-y: auto;
   position: relative;
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   text-align: center;
+  position: relative;
 }
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
+  top: 0px;
+  right: 10px;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -139,20 +145,21 @@ body {
   user-select: none;
   color: #333;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px 10px;
-  border-radius: 50%;
+  padding: 0px 0px;
+  border-radius: 0%;
   display: none; /* hidden by default, will be toggled via JS */
 }
 .prev-btn {
-  left: 10px;
+  left: 0px;
 }
 .next-btn {
-  right: 10px;
+  right: 0px;
 }
 
 /* Overlay Content */
 .overlay-content {
   padding-top: 0px;
+
 }
 
 .overlay-content img {
