@@ -18,7 +18,7 @@
   }
   /* Full‑screen overlay under (and including) the header */
   .card-overlay {
-    top: 200px;
+    top:140px;
     height: 600px;
   }
   .overlay-card {
