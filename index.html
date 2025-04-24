@@ -84,7 +84,7 @@
         slider: true,
         slides: [
         `<div class="overlay-slide">
-          <h2>The FAIRmat consortium</h2>
+          <h2 style="color: #FF0000">The FAIRmat consortium</h2>
 
           <div class="intro">
           <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
@@ -115,40 +115,135 @@
           </div>`,
 
           `<div class="overlay-slide">
-          <h2>The FAIRmat consortium</h2>
+          <h2 style="color: #FF0000">The FAIRmat consortium</h2>
 
           <div class="intro">
           <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
-          takes a bottom-up approach to develop the open-source platform NOMAD and other services.</div>
+          develops NOMAD, and enables the community to build a network of interconnected NOMAD Oases towards building its federated data infrastructure</div>
           <div class="features">
           <!-- 1 -->
-          <div class="feature-item">
-            <img style="width: 200px; height: auto;" src="assets/nomad-horizontal.png" alt="Getting started">
-            <img style="width: 130px; height: auto;" src="assets/oasis-horizontal.png" alt="Getting started">
+          <div class="feature-item" style="display: flex; justify-content: center; align-items: center; width: 100%">
+            <img style="width: 170px; height: auto; margin: 0 10px;" src="assets/nomad-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto; margin: 0 10px;" src="assets/oasis-horizontal.png" alt="Getting started">
           </div>
           <div class="intro">
-          <p><span style="color: #2A4CDF; font-weight: bold;"> NOMAD </span>
-          allows you to share your data or use extensive data provided by others.</p> 
+          <span style="color: #2A4CDF; font-weight: bold;"> NOMAD </span>
+          allows you to share your data or use extensive data provided by others. 
 
           <p><span style="color: #008A68; font-weight: bold;"> NOMAD Oasis </span>
           balances the use of local resources, customizable services, and data privacy on the one hand with 
           ready-made tools and data sharing on the other. </p>
 
-          <p><span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
-            enables the community to build a network of interconnected NOMAD Oases
-            towards its federated data infrastructure.</p>
           </div>
-          <img src="assets/infra.png" alt="NFDI and DFG">
+          <img src="assets/infra.png" alt="Infrastructure">
           </div>`
         ]
       },
       {
         slider: true,
         slides: [
-          '<img src="assets/service_1.png" alt="RDM Slide 1">',
-          '<img src="assets/service_2.png" alt="NOMAD">',
-          '<img src="assets/service_3.png" alt="NOMAD Oasis">',
-          '<img src="assets/service_4.png" alt="NOMAD CAMELS">'
+
+        //Slide 1
+        `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+
+          <div class="intro">
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          adopts a bottom-up approach to develop the open-source NOMAD platform and related services, tailored to address diverse data management needs.</div>
+          <div class="feature-item grid">
+            <img style="width: 100px; height: auto;" src="assets/nomad-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto;" src="assets/oasis-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto;" src="assets/camels-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto;" src="assets/plugins.png" alt="Getting started">
+          </div>
+          <div class="intro">
+          The <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span> ecosystem’s 
+          interconnected services and tools form one unified, cohesive hub for materials data.</div>
+          <div>
+          <img style="margin-top: 15px;" src="assets/services.png" alt="NFDI and DFG">
+          </div>`,
+
+        //Slide 2
+        `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+          <div class="features">
+          <div class="feature-item">
+            <img style="width: 55px; height: auto;" src="assets/nomad-vertical.png" alt="Getting started">
+            <p class="desc" style="font-weight: bold">Web-based software for FAIR research data management in materials science.</p>
+          </div>
+          <div class="rect-container">
+            <div class="rect">
+              <div class="label">Uploaded Entries</div>
+              <div class="value">19,115,497</div>
+            </div>
+            <div class="rect">
+              <div class="label">Uploaded Files</div>
+              <div class="value">112.6 TB</div>
+            </div>
+            <div class="rect">
+              <div class="label">Registered Users</div>
+              <div class="value">&gt;1000</div>
+            </div>
+          </div>
+
+          <div class="intro">
+          <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span> enables you to organize, analyze, share, 
+          and publish materials-science data. You can also browse, download, and analyze data from your colleagues.
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center; width: 100%">
+          <img style="margin: 0 auto; height: 180px;" src="assets/publish.png" alt="NFDI and DFG">
+          </div>`,
+
+        //Slide 3
+        `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+          <div class="features">
+          <div class="feature-item">
+            <img style="width: 45px; height: auto;" src="assets/oasis-vertical.png" alt="Getting started">
+            <p class="desc" style="font-weight: bold">Local management tool for your lab, adapted to your data-management 
+            needs and lab policies.</p>
+          </div>
+          <div class="rect" style="width: 180px; margin: 0 auto;">
+            <div class="label">Registered installations</div>
+            <div class="value">&gt; 80</div>
+          </div>
+          <div>
+          <img style="width: 300px;" src="assets/registered.png" alt="NFDI and DFG">
+          </div>
+          <div class="element">
+          <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span><span style="color: #008A68; font-weight: bold;"> Oasis</span>
+          lets you create your own NOMAD. Get an instant overview of all your group's data, increase productivity, 
+          and implement research data management plans with ease.
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center; width: 100%">
+          <img style="margin: 0 auto; height: 180px;" src="assets/Oasis.png" alt="NFDI and DFG">
+          </div>
+          </div>`,
+
+          // Slide 3
+          `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+          <div class="features">
+          <div class="feature-item">
+            <img style="width: 55px; height: auto;" src="assets/camels-vertical.png" alt="Getting started">
+            <p class="desc" style="font-weight: bold">Local management tool adapted to your data-management 
+            needs and lab policies.</p>
+          </div>
+          <div class="rect" style="width: 180px; margin: 0 auto;">
+            <div class="label">Supported instruments</div>
+            <div class="value">&gt; 200</div>
+          </div>
+
+          <div class="element">
+          <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span><span style="color: #BF8A36; font-weight: bold;"> CAMELS</span>
+          is a standalone open-source measurement software targeted towards the requirements of experimental physics.
+          <p>Ease of use, rich metadata and FAIR-compliant data are at the heart of CAMELS design.</p>
+
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center; width: 100%">
+          <img style="margin: 0 auto; height: 180px;" src="assets/NOMAD-camels-workflow.png" alt="NFDI and DFG">
+          </div>
+          </div>`
         ]
       },
       {

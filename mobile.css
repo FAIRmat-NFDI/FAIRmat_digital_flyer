@@ -51,10 +51,44 @@
   .overlay-slide { font-family: 'Titillium Web', sans-serif; padding: 1rem; }
   .overlay-slide h2 { margin-top: 0; color: #333; }
   .intro { margin: 1rem 0; line-height: 1.4; text-align: left;}
+  .element { margin: 0.2rem 0; line-height: 1.4; text-align: left;}
   .features { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start;}
   .feature-item { display: flex; align-items: flex-start; }
   .feature-item img { width: 64px; height: 64px; margin-right: 0.75rem; }
   .feature-item .title { font-weight: bold; margin: 0 0 0.25rem 0; text-align: left;}
   .feature-item .desc { color: #000; margin: 0; font-size: 0.95rem; text-align: left; }
+  .feature-item .grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: auto;
+    gap: 20px;               /* space between items */
+    justify-content: center; /* center the whole grid */
+    align-items: center;     /* vertically center each logo */
+  }
+  .rect-container {
+    display: flex;
+    justify-content: center;   /* center the three boxes as a group */
+    gap: 10px;                  /* space between boxes */
+  }
   
+  .rect {
+    background-color: #2A4CDF;
+    color: #fff;
+    padding: 5px;
+    border-radius: 6px;
+    text-align: center;
+    width: 110px;               /* or whatever fixed width you like */
+  }
+  
+  .rect .label {
+    text-transform: uppercase;
+    font-size: 0.75rem;            /* adjust for your design */
+    margin-bottom: 4px;
+  }
+  
+  .rect .value {
+    font-size: 0.9rem;         /* smaller than the label */
+    font-weight: bold;
+    line-height: 1;
+  }
 }
