@@ -53,8 +53,14 @@
   .intro { margin: 1rem 0; line-height: 1.4; text-align: left;}
   .element { margin: 0.2rem 0; line-height: 1.4; text-align: left;}
   .features { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start;}
-  .feature-item { display: flex; align-items: flex-start; }
+  .features .text {text-align: left;}
+  .feature-header {display: flex; align-items: center; gap:0.5rem;}
+  .feature-header .imghead {width: 32px; height: auto;}
+  .feature-header .title { font-weight: bold; margin: 0 0 0.25rem 0; text-align: left;}
+  .feature-header .desc { color: #000; margin: 0; font-size: 0.95rem; text-align: left; }
+  .feature-item { display: flex; align-items: flex-start;}
   .feature-item img { width: 64px; height: 64px; margin-right: 0.75rem; }
+  .feature-item .img2 { width: 64px; height: auto; margin-right: 0.75rem; }
   .feature-item .title { font-weight: bold; margin: 0 0 0.25rem 0; text-align: left;}
   .feature-item .desc { color: #000; margin: 0; font-size: 0.95rem; text-align: left; }
   .feature-item .grid {

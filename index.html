@@ -79,8 +79,11 @@
   <script>
     // Define overlay content for each card.
     // slider: true means show navigation arrows, false if one slide only.
+
+
     var overlayData = [
       {
+        //The FAIRmat consortium card
         slider: true,
         slides: [
         `<div class="overlay-slide">
@@ -140,6 +143,7 @@
         ]
       },
       {
+        //The NOMAD Ecosystem card
         slider: true,
         slides: [
 
@@ -247,6 +251,7 @@
         ]
       },
       {
+        //Learning resources card
         slider: false,
         slides: [
           `<div class="overlay-slide">
@@ -311,11 +316,40 @@
         ]
       },
       {
+        //Get in touch card
         slider: true,
         slides: [
-          '<h2>Get in touch</h2><p>For real-time interaction and quick responses, we invite you to join our community on Discord, where you can connect directly with our team members</p><p>Whether you need tips on RDM best practices or help using our tools such as NOMAD, NOMAD Oasis, and NOMAD CAMELS, NOMAD Discord is the best place to get answers.</p><img src="assets/discord.png" alt="Get in touch 1">',
-          '<h2>Follow us on social media for updates and news.</h2><img src="assets/social.png" alt="Get in touch 2">',
-          '<h2>Contribute to the project</h2><p>github and gitlab</p>'
+        `<div class="overlay-slide">
+          <h2>Get in touch</h2>
+
+          <div class="intro">
+          Whether you need RDM advice or help with NOMAD, NOMAD Oasis, or NOMAD CAMELS,
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span> provides various ways to reach our experts and engage with the community.
+         </div>
+         <div class="features">
+            <div class="feature-header">
+              <img class="imghead" src="assets/discord1.png" alt="Getting started">
+              <div class="title" style="color: #333399;">The NOMAD Discord server</div>
+            </div>
+            <div class="text">For real-time interaction and quick responses, we invite you to join our community on Discord, 
+                where you can connect directly with our team members.</div>
+          </div>
+          <div class="rect-container">
+            <div class="rect" style="width: 140px; margin: 10px;">
+              <div class="label">Community members</div>
+              <div class="value">&gt; 500</div>
+            </div>
+            <a href="https://discord.gg/your-invite" class="rect" style="width: 100px; margin: 10px;">
+            <div class="value">Join us now</div>
+            <div class="label">Click here</div>
+            </a>
+
+              
+            </div>
+          </div>
+          </div>
+
+        </div>`
         ]
       }
     ];
