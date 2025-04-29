@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAIRmat Digital Flyer</title>
+  <link rel="stylesheet" href="titillium_web.css">
+  <link rel="stylesheet" href="styles_old.css">
+  <link rel="stylesheet" href="mobile.css" media="only screen and (max-width:600px)">
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <div class="header-main">
+    <img src="assets/FAIRmat_new.webp" alt="FAIRmat Logo" class="logo">
+    <div class="header-title">FAIRmat</div>
+    </div>
+    <div class="header-subtext">
+      FAIR data infrastructure for condensed-matter physics and the chemical physics of solids
+    </div>
+  </div>
+
+  <!-- Container for the Cards (Grid) -->
+  <div class="container">
+    <!-- Card 1: The FAIRmat consortium -->
+    <div class="card" onclick="openOverlay(0)">
+      <div class="card-inner">
+        <div class="card-side card-front">
+          The FAIRmat consortium
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: The NOMAD ecosysystem -->
+    <div class="card" onclick="openOverlay(1)">
+      <div class="card-inner">
+        <div class="card-side card-front">
+          The NOMAD ecosystem
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Learning resources -->
+    <div class="card" onclick="openOverlay(2)">
+      <div class="card-inner">
+        <div class="card-side card-front">
+          Learning resources
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Get in touch -->
+    <div class="card" onclick="openOverlay(3)">
+      <div class="card-inner">
+        <div class="card-side card-front">
+          Get in touch
+        </div>
+        <div class="card-side card-back">
+          Contact information and more.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for Expanded Card Content (covers the window under header) -->
+  <div id="cardOverlay" class="card-overlay">
+    <div class="overlay-card">
+      <span class="close-btn" onclick="closeOverlay()">×</span>
+      <!-- Slider Arrows (shown conditionally) -->
+      <span id="prevBtn" class="nav-btn prev-btn" onclick="prevSlide()">&#10094;</span>
+      <span id="nextBtn" class="nav-btn next-btn" onclick="nextSlide()">&#10095;</span>
+      <div class="overlay-content" id="overlayContent">
+        <!-- Expanded content gets injected here -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript: Overlay and Slider Functionality -->
+  <script>
+    // Define overlay content for each card.
+    // slider: true means show navigation arrows, false if one slide only.
+
+
+    var overlayData = [
+      {
+        //The FAIRmat consortium card
+        slider: true,
+        slides: [
+        `<div class="overlay-slide">
+          <h2 style="color: #FF0000">The FAIRmat consortium</h2>
+
+          <div class="intro">
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          creates a single integrated, extensible, distributed FAIR research data management
+          (RDM) service for <span style="color: #FF0000; font-weight: bold"> FAIR </span> – 
+          <span style="color: #FF0000; font-weight: bold">F</span>indable and 
+          <span style="color: #FF0000; font-weight: bold">AI R</span>eady – data. </div>
+          <div class="feature-item">
+            <div class="desc" style="padding-top: 10px;">
+              It integrates data obtained from synthesis, experimental characterization, theory & computation, and various
+              applications.
+            </div>
+            <img style="width: 150px; height: 150px; margin-right: 0.55rem;" src="assets/wheel.png" alt="FAIRmat Areas">
+            </div>
+          <div class="intro">
+          <div style="font-weight: bold;"> With <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          you benefit from:</div>
+          <ul>
+            <li>Services for efficient data management</li>
+            <li>A platform for enhanced collaboration</li>
+            <li>Millions of FAIR data</li>
+            <li>Open-source tools developed by fellow researchers</li>
+          </ul>
+          <div><span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          is the NFDI consortium to build a FAIR federated data infrastructure
+          for solid-state physics.</div>
+          <img style="margin-top: 15px;" src="assets/funding.png" alt="NFDI and DFG">
+          </div>`,
+
+          `<div class="overlay-slide">
+          <h2 style="color: #FF0000">The FAIRmat consortium</h2>
+
+          <div class="intro">
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          develops NOMAD, and enables the community to build a network of interconnected NOMAD Oases towards building its federated data infrastructure</div>
+          <div class="features">
+          <!-- 1 -->
+          <div class="feature-item" style="display: flex; justify-content: center; align-items: center; width: 100%">
+            <img style="width: 170px; height: auto; margin: 0 10px;" src="assets/nomad-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto; margin: 0 10px;" src="assets/oasis-horizontal.png" alt="Getting started">
+          </div>
+          <div class="intro">
+          <span style="color: #2A4CDF; font-weight: bold;"> NOMAD </span>
+          allows you to share your data or use extensive data provided by others. 
+
+          <p><span style="color: #008A68; font-weight: bold;"> NOMAD Oasis </span>
+          balances the use of local resources, customizable services, and data privacy on the one hand with 
+          ready-made tools and data sharing on the other. </p>
+
+          </div>
+          <img src="assets/infra.png" alt="Infrastructure">
+          </div>`
+        ]
+      },
+      {
+        //The NOMAD Ecosystem card
+        slider: true,
+        slides: [
+
+        //Slide 1
+        `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+
+          <div class="intro">
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          adopts a bottom-up approach to develop the open-source NOMAD platform and related services, tailored to address diverse data management needs.</div>
+          <div class="feature-item grid">
+            <img style="width: 100px; height: auto;" src="assets/nomad-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto;" src="assets/oasis-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto;" src="assets/camels-horizontal.png" alt="Getting started">
+            <img style="width: 100px; height: auto;" src="assets/plugins.png" alt="Getting started">
+          </div>
+          <div class="intro">
+          The <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span> ecosystem’s 
+          interconnected services and tools form one unified, cohesive hub for materials data.</div>
+          <div>
+          <img style="margin-top: 15px;" src="assets/services.png" alt="NFDI and DFG">
+          </div>`,
+
+        //Slide 2
+        `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+          <div class="features">
+          <div class="feature-item">
+            <img style="width: 55px; height: auto;" src="assets/nomad-vertical.png" alt="Getting started">
+            <p class="desc" style="font-weight: bold">Web-based software for FAIR research data management in materials science.</p>
+          </div>
+          <div class="rect-container">
+            <div class="rect">
+              <div class="label">Uploaded Entries</div>
+              <div class="value">19,115,497</div>
+            </div>
+            <div class="rect">
+              <div class="label">Uploaded Files</div>
+              <div class="value">112.6 TB</div>
+            </div>
+            <div class="rect">
+              <div class="label">Registered Users</div>
+              <div class="value">&gt;1000</div>
+            </div>
+          </div>
+
+          <div class="intro">
+          <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span> enables you to organize, analyze, share, 
+          and publish materials-science data. You can also browse, download, and analyze data from your colleagues.
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center; width: 100%">
+          <img style="margin: 0 auto; height: 180px;" src="assets/publish.png" alt="NFDI and DFG">
+          </div>`,
+
+        //Slide 3
+        `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+          <div class="features">
+          <div class="feature-item">
+            <img style="width: 45px; height: auto;" src="assets/oasis-vertical.png" alt="Getting started">
+            <p class="desc" style="font-weight: bold">Local management tool for your lab, adapted to your data-management 
+            needs and lab policies.</p>
+          </div>
+          <div class="rect" style="width: 180px; margin: 0 auto;">
+            <div class="label">Registered installations</div>
+            <div class="value">&gt; 80</div>
+          </div>
+          <div>
+          <img style="width: 300px;" src="assets/registered.png" alt="NFDI and DFG">
+          </div>
+          <div class="element">
+          <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span><span style="color: #008A68; font-weight: bold;"> Oasis</span>
+          lets you create your own NOMAD. Get an instant overview of all your group's data, increase productivity, 
+          and implement research data management plans with ease.
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center; width: 100%">
+          <img style="margin: 0 auto; height: 180px;" src="assets/Oasis.png" alt="NFDI and DFG">
+          </div>
+          </div>`,
+
+          // Slide 3
+          `<div class="overlay-slide">
+          <h2 style="color: #2A4CDF">The NOMAD ecosystem</h2>
+          <div class="features">
+          <div class="feature-item">
+            <img style="width: 55px; height: auto;" src="assets/camels-vertical.png" alt="Getting started">
+            <p class="desc" style="font-weight: bold">Local management tool adapted to your data-management 
+            needs and lab policies.</p>
+          </div>
+          <div class="rect" style="width: 180px; margin: 0 auto;">
+            <div class="label">Supported instruments</div>
+            <div class="value">&gt; 200</div>
+          </div>
+
+          <div class="element">
+          <span style="color: #2A4CDF; font-weight: bold;">NOMAD</span><span style="color: #BF8A36; font-weight: bold;"> CAMELS</span>
+          is a standalone open-source measurement software targeted towards the requirements of experimental physics.
+          <p>Ease of use, rich metadata and FAIR-compliant data are at the heart of CAMELS design.</p>
+
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center; width: 100%">
+          <img style="margin: 0 auto; height: 180px;" src="assets/NOMAD-camels-workflow.png" alt="NFDI and DFG">
+          </div>
+          </div>`
+        ]
+      },
+      {
+        //Learning resources card
+        slider: false,
+        slides: [
+          `<div class="overlay-slide">
+          <h2>Learning resources</h2>
+
+          <div class="intro">
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          offers hands-on tutorials, expert-led events, comprehensive documentation,
+          and practical guides to support your FAIR data journey.
+         </div>
+         
+          <div class="features">
+          <!-- 1 -->
+          <div class="feature-item">
+            <img src="assets/getting_started.png" alt="Getting started">
+            <div>
+              <div class="title" style="color: #333399;">Getting started with NOMAD</div>
+              <p class="desc">Kick off your NOMAD journey with with hands-on guide and examples.</p>
+            </div>
+            </div>
+            <!-- 2 -->
+            <div class="feature-item">
+            <img src="assets/tutorials.png" alt="FAIRmat tutorials">
+            <div>
+              <div class="title" style="color: #669933;">FAIRmat tutorials (videos)</div>
+              <p class="desc">Watch step-by-step video tutorials on FAIRmat and NOMAD tools.</p>
+            </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="feature-item">
+            <img src="assets/docs.png" alt="NOMAD documentation">
+            <div>
+              <div class="title" style="color: #009999;">NOMAD documentation</div>
+              <p class="desc">Understand all NOMAD features through tutorials, how-to-guides, and explanations.
+              </p>
+            </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="feature-item">
+            <img src="assets/rdm.png" alt="rdm">
+            <div>
+              <div class="title" style="color: #FF0066;">Research data management guides</div>
+              <p class="desc">Learn how to write data management plans or about the legal aspects of research data.
+              </p>
+            </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="feature-item">
+            <img src="assets/events.png" alt="events">
+            <div>
+              <div class="title" style="color: #663399;">FAIRmat Events</div>
+              <p class="desc">Check our events page for upcoming tutorials, workshops, and meetings.
+              </p>
+            </div>
+           </div>
+          </div>
+        </div>`
+
+        ]
+      },
+      {
+        //Get in touch card
+        slider: true,
+        slides: [
+        `<div class="overlay-slide">
+          <h2>Get in touch</h2>
+
+          <div class="intro">
+          Whether you need RDM advice or help with NOMAD, NOMAD Oasis, or NOMAD CAMELS,
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span> provides various ways to reach our experts and engage with the community.
+         </div>
+         <div class="features">
+            <div class="feature-header">
+              <img class="imghead" src="assets/discord1.png" alt="Getting started">
+              <div class="title" style="color: #333399;">The NOMAD Discord server</div>
+            </div>
+            <div class="text">For real-time interaction and quick responses, we invite you to join our community on Discord, 
+                where you can connect directly with our team members.</div>
+          </div>
+          <div class="rect-container">
+            <div class="rect" style="width: 140px; margin: 10px;">
+              <div class="label">Community members</div>
+              <div class="value">&gt; 500</div>
+            </div>
+            <a href="https://discord.gg/your-invite" class="rect" style="width: 100px; margin: 10px;">
+            <div class="value">Join us now</div>
+            <div class="label">Click here</div>
+            </a>
+
+              
+            </div>
+          </div>
+          </div>
+
+        </div>`
+        ]
+      }
+    ];
+
+    // Global variables to keep track of the current card and slide index
+    var currentCardIndex = 0;
+    var currentSlideIndex = 0;
+
+    function openOverlay(cardIndex) {
+      currentCardIndex = cardIndex;
+      currentSlideIndex = 0; // Start with the first slide
+      updateOverlayContent();
+      // Show the overlay (covering window beneath the header)
+      document.getElementById('cardOverlay').style.display = "flex";
+    }
+
+    function updateOverlayContent() {
+      var data = overlayData[currentCardIndex];
+      var content = data.slides[currentSlideIndex];
+      document.getElementById('overlayContent').innerHTML = content;
+      // Show or hide navigation arrows based on slider property and number of slides
+      if (data.slider && data.slides.length > 1) {
+        document.getElementById('prevBtn').style.display = "block";
+        document.getElementById('nextBtn').style.display = "block";
+      } else {
+        document.getElementById('prevBtn').style.display = "none";
+        document.getElementById('nextBtn').style.display = "none";
+      }
+    }
+
+    function closeOverlay() {
+      document.getElementById('cardOverlay').style.display = "none";
+    }
+
+    function nextSlide() {
+      var data = overlayData[currentCardIndex];
+      currentSlideIndex = (currentSlideIndex + 1) % data.slides.length;
+      updateOverlayContent();
+    }
+
+    function prevSlide() {
+      var data = overlayData[currentCardIndex];
+      currentSlideIndex = (currentSlideIndex - 1 + data.slides.length) % data.slides.length;
+      updateOverlayContent();
+    }
+  </script>
+</body>
+</html>

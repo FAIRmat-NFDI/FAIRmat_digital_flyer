@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAIRmat - Consortium Overview</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img src="assets/FAIRmat_logo.png" alt="FAIRmat Logo" class="logo" />
+    <div class="title">FAIR data infrastructure for condensed-matter physics and the chemical physics of solids</div>
+    
+    <h2>Consortium Overview</h2>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-header-content">
+          <div class="icon">
+            <i class="bi bi-globe"></i>
+          </div>
+          About us
+        </div>
+        <i class="bi bi-chevron-down arrow"></i>
+      </div>
+      <div class="accordion-content">
+        <div>
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          creates a single integrated, extensible, distributed FAIR research data management
+          (RDM) service for <span style="color: #FF0000; font-weight: bold"> FAIR </span> – 
+          <span style="color: #FF0000; font-weight: bold">F</span>indable and 
+          <span style="color: #FF0000; font-weight: bold">AI R</span>eady – data. 
+        </div>
+        <div style="margin: 10px auto">
+            <span style="color: #FF0000; font-weight: bold;">FAIRmat</span> integrates data obtained from synthesis, experimental characterization, theory & computation, and various
+              applications.            
+        </div>
+        <div style="text-align: center; margin: 10px auto">
+            <img style="width: 200px; height: 200px; margin-right: 0.55rem;" src="assets/wheel.png" alt="FAIRmat Areas">
+        </div>
+        <div>
+            <p style="margin-bottom: 5px;">With <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+            you benefit from:</p>
+            <ul>
+              <li>Services for efficient data management</li>
+              <li>A platform for enhanced collaboration</li>
+              <li>Millions of FAIR data</li>
+              <li>Open-source tools developed by fellow researchers</li>
+            </ul>
+        </div>
+        <div style="text-align: center; font-weight: 600;"><a target="_blank" href="https://www.fairmat-nfdi.eu/fairmat"> Learn more</a></div>    
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-header-content">
+          <div class="icon">
+            <i class="bi bi-database"></i>
+          </div>
+          The data infrastructure
+        </div>
+        <i class="bi bi-chevron-down arrow"></i>
+      </div>
+      <div class="accordion-content">
+        <div>
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          develops NOMAD, and enables the community to build a network of interconnected
+          NOMAD Oases towards building its federated data infrastructure.
+        </div>
+        <div style="margin: 10px auto; display: flex; justify-content: center; align-items: center;">
+            <img style="width: 170px; height: auto; margin: 0 5px;" src="assets/nomad-horizontal.png" alt="NOMAD logo">
+            <img style="width: 100px; height: auto; margin: 0 5px;" src="assets/oasis-horizontal.png" alt="NOMAD Oasis logo">
+        </div>
+        <div>
+          <p><span style="color: #2A4CDF; font-weight: bold;"> NOMAD </span>
+          allows you to share your data or use extensive data provided by others.</p>
+
+          <p><span style="color: #008A68; font-weight: bold;"> NOMAD Oasis </span>
+          balances the use of local resources, customizable services, and data privacy on the one hand with 
+          ready-made tools and data sharing on the other.</p>
+        </div>
+        <div style="text-align: center; margin: 10px auto">
+          <img style="width: 100%;" src="assets/infra.png" alt="Infrastructure">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-header-content">
+          <div class="icon">
+            <i class="bi bi-cash-stack"></i>
+          </div>
+          Funding Information
+        </div>
+        <i class="bi bi-chevron-down arrow"></i>
+      </div>
+      <div class="accordion-content">
+        <div>
+          <span style="color: #FF0000; font-weight: bold;">FAIRmat</span>
+          is a consortium of the German Research-Data Infrastructure (NFDI) to build a FAIR federated data infrastructure
+          for solid-state physics and the chemical physics of solids.
+        </div>
+        <div>
+          It is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – project 460197019
+        </div>
+          <img style="width: 100%; margin-top: 15px;" src="assets/funding.png" alt="NFDI and DFG">
+          </div>
+      </div>
+    </div>
+<!--    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-header-content">
+          <div class="icon">
+            <i class="bi bi-chat-dots"></i>
+          </div>
+          Example Title...
+        </div>
+        <i class="bi bi-chevron-down arrow"></i>
+      </div>
+      <div class="accordion-content">
+        <p>Example content for Example Title... section...</p>
+      </div>
+    </div>
+  -->
+    <div class="back-button">
+      <a href="index.html"><i class="bi bi-arrow-left"></i> Back to home</a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const headers = document.querySelectorAll(".accordion-header");
+    
+        headers.forEach((header) => {
+          header.addEventListener("click", () => {
+            const accordionItem = header.parentElement;
+            const isActive = accordionItem.classList.contains("active");
+    
+            const allItems = document.querySelectorAll(".accordion-item");
+            allItems.forEach((item) => item.classList.remove("active"));
+    
+            // If the clicked one wasn't already active, activate it
+            if (!isActive) {
+              accordionItem.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
