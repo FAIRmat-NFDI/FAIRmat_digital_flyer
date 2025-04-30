@@ -19,7 +19,7 @@ It reflects our commitment to **FAIR data**, **open science**, and **digital-fir
 ## 🌐 The Flyer
 You can view the flyer on the following link - It is optimized for mobile-devices.
 
-🔗 [fairmat-nfdi.github.io/FAIRmat-digital-flyer](https://fairmat-nfdi.github.io/FAIRmat-digital-flyer)
+🔗 [fairmat-nfdi.github.io/FAIRmat-digital-flyer](https://fairmat-nfdi.github.io/FAIRmat_digital_flyer/)
 
 ## Feedback and issues
 
