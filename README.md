@@ -23,6 +23,6 @@ You can view the flyer on the following link - It is optimized for mobile-device
 
 ## Feedback and issues
 
-If you encounter any inaccuracies, visual inconsistencies, or have suggestions for additional content, we kindly invite you to [open an issue](https://github.com/your-org/FAIRmat-digital-flyer/issues).  
+If you encounter any inaccuracies, visual inconsistencies, or have suggestions for additional content, we kindly invite you to [open an issue](https://github.com/FAIRmat-NFDI/FAIRmat_digital_flyer/issues).  
 Your feedback is highly appreciated and contributes significantly to improving the quality, clarity, and usability of the FAIRmat Digital Flyer for all users.
 
