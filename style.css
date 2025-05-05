@@ -12,6 +12,13 @@ img.logo {
   width: 100px;
   margin: 20px auto 10px;
 }
+.title-main {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom:0px auto 20px;
+  padding: 0px 20px;
+}
 .title {
   font-size: 1.2rem;
   font-weight: 600;
@@ -69,8 +76,8 @@ h2 {
 }
 
 .statistics {
-  margin: 40px 0;
-  padding: 30px 20px;
+  margin: 0px 0;
+  padding: 10px 30px;
   background-color: #f4f7ff;
 }
 
